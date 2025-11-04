@@ -25,7 +25,7 @@ function App() {
     }
 
   return (
-    <div className='w-full flex justify-center p-5 bg-blue-50'>
+    <div className='w-full flex justify-center p-5'>
       <Table data={data} info={info} onPageChange={onPageChange} selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts}/>
     </div>
         

@@ -14,7 +14,7 @@ export default function Table({data, onPageChange, info, selectedProducts, setSe
   }
   
   return (
-    <div className='w-[90%] bg-white'>
+    <div className='w-[90%]'>
       <div className='mb-1 text-slate-600 text-xs font-semibold'>Selected rows {selectedProducts.length}</div>
       <DataTable value={data} selectionMode={null} selection={selectedProducts} onSelectionChange={(e)=>selectionChange(e)} dataKey="id" showGridlines stripedRows tableStyle={{ width:'100%', fontSize:"12px" }}  >
           <Column selectionMode="multiple" headerStyle={{ width: '30px' }}></Column>
