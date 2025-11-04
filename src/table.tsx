@@ -10,19 +10,13 @@ export default function Table({data, onPageChange, info, selectedProducts, setSe
   const selectionChange = (e:any) => {
     const newSelection = e.value;
 
-    const merged = [
-      ...selectedProducts.filter(
-        (item:any) => !newSelection.some((n:any) => n.id === item.id)
-      ),
-      ...newSelection,
-    ];
-    setSelectedProducts(merged);
+    setSelectedProducts(newSelection);
   }
   
   return (
-    <div className='w-[90%]'>
+    <div className='w-[90%] bg-white'>
       <div className='mb-1 text-slate-600 text-xs font-semibold'>Selected rows {selectedProducts.length}</div>
-      <DataTable value={data} selectionMode={'checkbox'} selection={selectedProducts} onSelectionChange={(e)=>selectionChange(e)} dataKey="id" showGridlines stripedRows tableStyle={{ width:'100%', fontSize:"12px" }}  >
+      <DataTable value={data} selectionMode={null} selection={selectedProducts} onSelectionChange={(e)=>selectionChange(e)} dataKey="id" showGridlines stripedRows tableStyle={{ width:'100%', fontSize:"12px" }}  >
           <Column selectionMode="multiple" headerStyle={{ width: '30px' }}></Column>
           <Column field="title" header="TITLE" body={(row)=>row.title || 'NA'}></Column>
           <Column field="place_of_origin" header="PLACE OF ORIGIN" body={(row)=>row.place_of_origin || 'NA'}></Column>
